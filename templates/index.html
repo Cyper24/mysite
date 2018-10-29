@@ -1,0 +1,14 @@
+{% extends "header.html" %}
+
+{% block content %}
+<h2 class="text-center text-uppercase text-secondary mb-0">Home</h2>
+        <hr class="star-dark mb-5">
+{% if user.is_authenticated %}
+ Welcome {{ user.username }}!
+<p>Email : {{ user.email }}</p>
+{% else %}
+  <p>LOGIN DULU...</p>
+  <a href="{% url 'login' %}">login</a>
+
+{% endif %}
+{% endblock %}
